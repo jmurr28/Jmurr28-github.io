@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Diabetic Tracker</title>
+  <link rel="manifest" href="manifest.json">
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f0f0f0; }
+    .day { background: #fff; margin-bottom: 20px; padding: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    h2 { color: #2196f3; }
+    label { display: block; margin: 5px 0; }
+    input[type="time"] { margin-top: 5px; }
+  </style>
+</head>
+<body>
+  <h1>7-Day Diabetic Tracker</h1>
+  <div class="day" id="day1">
+    <h2>Day 1</h2>
+    <label><input type="checkbox" id="meal1"> Breakfast: Oatmeal with chia & cinnamon</label>
+    <label><input type="checkbox" id="supp1"> Supplements: Biotin, ALA, Chromium</label>
+    <input type="time" class="meal-time-input" data-meal-id="meal1">
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</body>
+</html>
